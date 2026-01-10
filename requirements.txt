@@ -11,4 +11,7 @@ WTForms-SQLAlchemy==0.4.1
 email-validator==2.1.1
 pytest==8.0.2
 python-dotenv==1.0.1
+
 flask-migrate
+
+gunicorn
