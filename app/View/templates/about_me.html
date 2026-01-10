@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+<img src="{{ url_for('static', filename='Headshot.jpg') }}" alt="Picture of me!" class="image-right">
+
+<h1>Amber Drinkwater</h1>
+
+<p class="body">
+    Adaptable electrical engineer with significant experience in project management for systems requiring rigorous safety and performance standards. Skilled leader with experience managing large teams to accomplish complex goals over long periods of time. Eager to support research and development goals to drive technology forward. 
+</p>
+<br><br>
+<p class="body">
+    I study at Worcester Polytechnic Institute (WPI) where I am in my senior year, in May of 2026 I will graduate with a Bachelor's of Science in Electrical and Computer Engineering and a Bachelor's of Science in Robotics Engineering. My time at WPI has allowed me to learn project management and leadership in a very practical way. My time in the High Power Rocketry Club (HPRC) has especially allowed me to grow as a leader.
+    My ultimate goal is to support novel research as an engineer and bring scientific understanding forward. 
+</p>
+
+<h2>Work History</h2>
+<a href="{{ url_for('routes.Siemens')}}"> Siemens (May 2025 - August 2025) </a>
+ | 
+<a href="{{ url_for('routes.Micross')}}"> Micross (June 2024 - August 2024) </a>
+
+
+{% endblock %}

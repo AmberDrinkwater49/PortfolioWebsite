@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Programming a 4-DOF Robotic Arm </h1>
+In the course, RBE 3001 - Manipulation, I worked with a team of three other students to program a 4-DOF (Degree of Freedom) Robotic Arm so that it could complete a pick and place routine. The robot would identify the color of plastic balls placed in its work area and then sort them. This required the use of forward and inverse kinematics to determine where the arm would move as well as quintic trajectories to make the arm move well. We completed the programming in MATLAB due to its native handling of matrices. 
+<br><br>
+This was a highly technical project, and I learned a lot about the design of control schemes in robotics and kinematics necessary to move them. The specifics about how we calculated the matrices are in the report attached below.  
+<br><br>
+One of things I noticed when making the robot was that if it missed a ball it would go through the entire routine of sorting it, even though it had failed to pick it up. To alleviate this waste of time, I looked through the motor’s specifications and found that it had current feedback. So, I implemented a check where the robot would see if the current was above a certain threshold, meaning it was holding a ball, and if it wasn’t it would move on to the next ball. This worked very well and saved us a lot of time! 
+
+<br>
+<h2><a href="https://drive.google.com/file/d/1-s1K7DdQvStbK2iWJZDSekE11zcWnIyi/view?usp=sharing">Project Report</a></h2>
+<br>
+<h2><a href="https://drive.google.com/file/d/1awbG3zdvIIsTxqy69Orsz7Kvdh32l6uP/view?usp=sharing">Video of the arm moving!</a></h2>
+
+<br>
+Also view this video: <a href="https://www.youtube.com/watch?v=Vd1bfmvgXD8">Demo Video</a>, which presents a brief overview of the project! 
+    
+{% endblock %}

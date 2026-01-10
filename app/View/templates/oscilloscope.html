@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Real-Time Oscilloscope</h1>
+In ECE 3849 - Real-Time Embedded Systems over the course of multiple lab assignments I used Texas Instruments' Real-Time Operating System to create an oscilloscope. The oscilloscope was able to trigger, change sizes, measure, and even perform a Fast Fourier Transform. The creation of this oscilloscope required the careful use of semaphores, interrupts, mailboxes, etc. All in all, in this course I learned how to properly design for real-time scenarios, making things as fast as they needed to be, not as fast as they could be. 
+<br><br>
+Attached are reports which go into more detail as to how I designed the system and what specifications I designed for. 
+<br>
+<h2><a href="https://drive.google.com/file/d/1Sn_QwZa02cf8QuS6tjFS1Jxdh7US0rhN/view?usp=sharing">Digital Oscilloscope</a></h2>
+<br>
+<img src="{{ url_for('static', filename='Oscilloscope_View.png') }}" alt="View of a pixelated oscilloscope showing what where information can be found." class="Image">
+<br>
+<h2><a href="https://drive.google.com/file/d/1LCVDxfQMQBKil8XFmAZ-TmfdjPFBPgNT/view?usp=sharing">RTOS, Spectrum Analyzer</a></h2>
+<br>
+<img src="{{ url_for('static', filename='FFT.png') }}" alt="View of a pixelated FFT" class="Image">
+<br>
+<h2><a href="https://drive.google.com/file/d/15AbbYXL61q-mMoMR_I0BiucFI0JqqdMr/view?usp=sharing">Advanced I/O</a></h2>
+
+    
+{% endblock %}

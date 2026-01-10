@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Design of an Analog Operational Amplifier</h1>
+
+While at WPI I took the course: ECE4902 - Analog Integrated Circuit Design. In this course I learned about the various designs of analog circuits, specifically differential pairs, amplifiers, and bias networks. Most of the class covered analysis of these circuits, but the final project was to design an operational amplifier according to given specifications. The design was completed in Cadence, where I worked with a team of three other students to design it.  
+<br><br>
+Specifically, I worked on the Bias Generator portion of the design as this was my first time using Cadence. The report is attached below where you can find more of the specifics of the design, however what was most interesting to me were the concessions made on the specifications. Time was very short in completing this project, only about two weeks where, naturally, we were completing other work as well. We found that some of the specifications given were not realistically attainable without copious amounts of time, and since the time for the project was non-negotiable, we decided to change some of the specifications. 
+<br><br>
+We found that the bandgap-reference voltage was too low to get good results. While it may have been possible to use, the tuning required to meet other parameters would have taken too long. And so, we changed it, especially since the end-user would not care what an interior voltage on the chip was. This decision, to me, reflected the ideal relationship between a project manager and an engineer. Not all specifications should be set in stone, and moreover they should be a conversation between the manager and engineer, not a mandate. 	 
+
+<br>
+<h2><a href="https://drive.google.com/file/d/1lwXFv-DRWi-sv8QWZduWABarVzqh7Hh5/view?usp=sharing">Project Description and Specifications</a></h2>
+<br>
+<h2><a href="https://drive.google.com/file/d/1eOxTRneqRaasKRoRSvFapxN6gB_4ejIn/view?usp=sharing">Project Report</a></h2>
+<br>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'bootstrap/base.html' %} {% import 'bootstrap/wtf.html' as wtf %} {%
+block styles %} {{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+{% endblock %}
+{% block navbar %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"
+                ><span style="color: #a9b0b7">Amber </span
+                ><span style="color: #ac2b37">Drinkwater</span></a
+            >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a href="{{ url_for('routes.about_me')}}"> About Me </a>
+            <a href="{{ url_for('routes.MQP')}}">Assistive Elbow Exoskeleton</a>
+            <a href="{{ url_for('routes.IQP')}}">Designing a Course for Drone Piloting </a>
+            <div class="dropdown">
+                <button class="dropbtn">Class Projects
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('routes.oscilloscope')}}">Real-Time Oscilloscope</a>
+                    <a href="{{ url_for('routes.RBE3001')}}">Programming a 4-DOF Robotic Arm</a>
+                    <a href="{{ url_for('routes.RBE3002')}}">Maze Running Robot</a>
+                    <a href="{{ url_for('routes.ECE4902')}}">Design of an Analog Operational Amplifier</a>
+                    <a href="{{ url_for('routes.RBE2001')}}">Mini Solar Panel Replacement Robot</a>
+                </div>
+            </div>
+             <div class="dropdown">
+                <button class="dropbtn">High Power Rocketry Club
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('routes.Explorator')}}">Explorator</a>
+                    <a href="{{ url_for('routes.Persephone')}}">Persephone</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% endblock %}

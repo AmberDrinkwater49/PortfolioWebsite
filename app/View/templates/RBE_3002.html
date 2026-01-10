@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Maze Running Robot</h1>
+In the course RBE 3002 - Navigation, I worked with two other students to program a TurtleBot to implement SLAM in a maze. The robot uses LIDAR for navigation, which is very noisy, and so we fused those sensor readings with encoder data from the driving motors using a Kalman Filter. We ended up with a robot, programmed in ROS1, that could implement SLAM in any maze it was placed into. For navigation, we used A* with some tweaks to make the robot avoid the walls more.  
+<br><br>
+While the course was very difficult, it was also very rewarding and seeing this robot perfectly run a maze was a very proud moment! In addition, the robot needed to be able to save the map and then localize itself in it when placed in a random location. To accomplish this, we used a Monte-Carlo Particle Filter which fills the map with random poses of where the robot could be, then compares the poses with its sensor readings. After a few turns to differentiate between similar locations, the robot could reliably converge on a known position. 
+<br><br>
+<h2><a href="https://drive.google.com/file/d/1yXCkkgInvRIDs1eW1UC3xGxkjVT35vYv/view?usp=sharing">Project Report</a></h2>
+<br><br>
+<img src="{{ url_for('static', filename='turtleBotInMaze.png') }}" alt="View of the robot in the maze" class="image-center">
+<br>
+
+{% endblock %}

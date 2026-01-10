@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Highlighted Projects</h1>
+    <h2>
+        Assistive Elbow Exoskeleton
+    </h2>
+
+    <img src="{{ url_for('static', filename='Signal_Processing_Board_2D_Full.png') }}" alt="2D Image of Signal Processing Board" class="image-left">
+    <h3>
+        Signal Processing Board
+    </h3>
+    <p class="body">
+            For my capstone project (MQP), my team and I are developing an exoskeleton to help those 
+        recovering from strokes and injuries. The exoskeleton must take signals from surface electromyography sensors (sEMGs)
+        in order to react to the user's intentions. Naturally, these signals are noisy and must be processed before 
+        being sent to the controller. We need to focus on frequencies between ~20Hz and ~450Hz while discounting 60Hz (since
+        power is distributed at 60Hz in the USA). Additionally, the signal produced by the sEMGs is only about +/- 2.5 mV;
+        this is too low to reliably detect, so we must amplify the signal! The goal was to amplify the signal to about +/- 5 V, 
+        however we were unable to accomplish this and ended with a final signal of +/- 2.5 V in simulations. We determined that
+        this would be sufficient and decided to move forward with testing.
+    </p>
+
+    <br>
+    <p class="body">
+            The board has not yet been tested. It uses the following ICs: INA333AIDRGR to amplify the signal from the EMGs, 
+        LT1679CS#TRPBF to amplify and provide a bandpass filter, UAF42AP to filter out 60 Hz. The bandpass filter
+        made is actually a low-pass and high-pass filter in succession. This is to create a filter with a higher Q.
+        This filter, more specifically, is made from the Sallen-Key topology and each stage is fourth order.
+    </p>
+
+    <br>
+    <h3>
+        Control System
+    </h3>
+
+    <p class="body">
+            Naturally to properly operate this system, a control system is needed. Outlining our goals we determined that we wanted
+        to provide a firm but not too strong assist to the user. The actuator should never be so strong as to allow the user to 
+        lift something they shouldn't. This is to say that when we were designing the system we initially concerned ourselves with 
+        the possibility that the motor was providing less than full force as the person was failing to lift something heavy. After
+        much deliberation, however, we determined that if the gain on the motor control system was such that the motor reaches peak torque 
+        when the user is at peak effort this should never come into play. Furthermore, given that our intended user is either recovering 
+        post injury or a stroke patient, they shouldn't be lifting anything too heavy anyway. With these considerations, we were able
+        to dramatically simplify our system.
+    </p>
+
+    <br>
+    
+    <p class = "body">
+            Simplicity is incredibly important in engineering and control systems, the more complicated a system is, the more points 
+        of failure. Ensuring that this system would never fail and that any failures did not cause harm was of the utmost priority; 
+        naturally then, simplicity was certainly a goal. With the above goals and concerns, we designed a control system which measures 
+        the effort of the patient, the torque output by the motor, and the position of the arm. The first two inputs to this system are 
+        rather obvious, we want to have the motor behave proportionally to the effort the user puts in as this will feel the most "natural".
+        We then use a PID loop to error-correct for the motor's torque output. Where the position of the arm comes in is at the full extension
+        and flexion points of the arm. At this point we are still deciding between using a linear actuator and a brushless motor, the 
+        brushless motor does nto have hard stops, and thus could theoretically push the arm further than it can go. Obviously, this would
+        be very bad and could seriously injure someone. Therefore, we attenuate the motor's output proportionally to the position of the arm
+        only if the arm is close to the full extension and flexion points. This means that as someone moves their arm fully extended the motor
+        will slow and eventually turn off, preventing injury. Furthermore, we will be integrating limit switches to turn the motor off completely 
+        at these points.
+    </p>
+
+    <br>
+
+    <img src="{{ url_for('static', filename='Control_Loop_Diagram.png') }}" alt="Diagram of a Control Loop showing EMG signals and position feedback being mixed together to output a torque." class="Image">
+
+
+{% endblock %}
