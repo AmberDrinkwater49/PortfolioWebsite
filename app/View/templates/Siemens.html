@@ -1,5 +1,23 @@
 {% extends "base.html" %} {% block content %}
 
-<h1>Siemens</h1>
-    
+<h1>Siemens - Engineering Leadership Development Program</h1>
+<br>
+In the summer of 2025, I interned with Siemens: Electrical Products in their Engineering Leadership Development Program. I had two distinct roles during this time: improving data management for the Business Development Team, and performing testing and analysis for the new solid-state circuit breaker. 
+<br><br>
+<h2>Business Development</h2> 
+<br>
+The Business Development Team manages the company’s interactions with residential home builders across the country, and they had a few weakpoints they needed help with. First, the system in which they managed contracts was made by a previous employee who did not train anyone or leave documentation prior to leaving, making navigating his systems very difficult. Next, cross-references to other companies’ products were done manually, which could take days of busy work. 
+<br><br>
+To fix the first problem, I first worked with those who would be using the sheet to understand what they wanted and expected out of it. I then used those ideas in making a new excel sheet which would have as few entries as possible. I did this by relating cells across sheets and my personal favorite excel feature: Pivot Tables. However, most importantly, I provided ample documentation as to how the sheet works and what people should do with it. I wanted to ensure that the sheet could be used for years to come. In the end it was a success and the sheet is still being used! 
+<br><br>
+To fix the second problem, I realized that nothing I could do myself would stand the test of time. And so I decided to make a web crawler (although it isn’t a conventional one as you will see). This way, anytime the team fears information may be out of date, the crawler can update everything. Luckily, Siemens has its own AI which I configured to do this process, hence why I say this isn’t a conventional webcrawler. I implemented many rules to make sure that the formats were done correctly so that the returned data could be easily pasted into a Tableau table, which then displays the data. This data can be displayed company-wide, when I left it wasn’t since another team was working on a similar idea, and we needed to check in with them. 
+<br><br>
+<h2>Solid-State Circuit Breaker</h2> 
+<br>
+Naturally, I can’t talk about a lot of what I would like to talk about here since it is IP. However, what I can say is that Siemens is developing a residential Solid-State Circuit Breaker which operates digitally instead of mechanically like conventional circuit breakers. When done correctly, this breaker will be able to react significantly faster than a mechanical breaker and it can have extra features. I was charged with testing the breaker against nuisance loads, which are loads in your homes that generate perturbations that could be confused for an arc event. This required endless amounts of data collection on an oscilloscope in a room filled with loads (like wall-to-wall fans, lights, washing machines, saws). The important part came later... 
+<br><br>
+Once sufficient data had been collected, we needed a way to isolate important signals (I am purposefully avoiding being too specific) and send them to a machine learning algorithm.  So, using MATLAB I developed an algorithm that would reliably isolate the signals using running standard deviations of the derivative of the signals. The algorithm worked very well and had a very high accuracy in detecting the signals we needed! 
+<br><br>
+This internship taught me many technical skills in data analysis and documentation, as well as how to navigate a large company like Siemens. I feel much more confident now in my ability to jump into a new setting and contribute! 
+
 {% endblock %}
