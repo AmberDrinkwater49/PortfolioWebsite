@@ -54,7 +54,7 @@
         rather obvious, we want to have the motor behave proportionally to the effort the user puts in as this will feel the most "natural".
         We then use a PID loop to error-correct for the motor's torque output. Where the position of the arm comes in is at the full extension
         and flexion points of the arm. At this point we are still deciding between using a linear actuator and a brushless motor, the 
-        brushless motor does nto have hard stops, and thus could theoretically push the arm further than it can go. Obviously, this would
+        brushless motor does not have hard stops, and thus could theoretically push the arm further than it can go. Obviously, this would
         be very bad and could seriously injure someone. Therefore, we attenuate the motor's output proportionally to the position of the arm
         only if the arm is close to the full extension and flexion points. This means that as someone moves their arm fully extended the motor
         will slow and eventually turn off, preventing injury. Furthermore, we will be integrating limit switches to turn the motor off completely 
@@ -67,3 +67,4 @@
 
 
 {% endblock %}
+
